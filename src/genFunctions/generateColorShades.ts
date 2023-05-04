@@ -15,6 +15,7 @@ export default function generateColorShades(seedColor: Color, colorAmount: numbe
 
     let iterations = 0
     for (let i = 0; i < colorAmount; i++) {
+
         let color = new Color(seedHslArray)
         if (iterations === 0) color.shiftL(-step * i)
         if (iterations > 0) color.shiftL(step * (i - iterations + 1))
