@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683184422080" clover="3.2.0">
-  <project timestamp="1683184422080" name="All files">
-    <metrics statements="61" coveredstatements="61" conditionals="30" coveredconditionals="28" methods="8" coveredmethods="8" elements="99" coveredelements="97" complexity="0" loc="61" ncloc="61" packages="2" files="4" classes="4"/>
+<coverage generated="1683184742995" clover="3.2.0">
+  <project timestamp="1683184742996" name="All files">
+    <metrics statements="61" coveredstatements="61" conditionals="30" coveredconditionals="30" methods="8" coveredmethods="8" elements="99" coveredelements="99" complexity="0" loc="61" ncloc="61" packages="2" files="4" classes="4"/>
     <package name="color">
       <metrics statements="32" coveredstatements="32" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
       <file name="color.ts" path="/home/do0dleman/Documents/vscode/websites/frontend/do0dleColors/src/color/color.ts">
@@ -41,7 +41,7 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="29" coveredstatements="29" conditionals="21" coveredconditionals="19" methods="5" coveredmethods="5"/>
+      <metrics statements="29" coveredstatements="29" conditionals="21" coveredconditionals="21" methods="5" coveredmethods="5"/>
       <file name="hexToRgb.ts" path="/home/do0dleman/Documents/vscode/websites/frontend/do0dleColors/src/utils/hexToRgb.ts">
         <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="9" count="2" type="stmt"/>
@@ -54,31 +54,31 @@
         <line num="29" count="6" type="stmt"/>
       </file>
       <file name="rgbToHsl.ts" path="/home/do0dleman/Documents/vscode/websites/frontend/do0dleColors/src/utils/rgbToHsl.ts">
-        <metrics statements="19" coveredstatements="19" conditionals="19" coveredconditionals="17" methods="2" coveredmethods="2"/>
+        <metrics statements="19" coveredstatements="19" conditionals="19" coveredconditionals="19" methods="2" coveredmethods="2"/>
         <line num="3" count="2" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
-        <line num="11" count="27" type="stmt"/>
-        <line num="12" count="9" type="stmt"/>
-        <line num="13" count="9" type="stmt"/>
-        <line num="15" count="9" type="stmt"/>
-        <line num="17" count="9" type="stmt"/>
-        <line num="18" count="9" type="stmt"/>
-        <line num="19" count="9" type="cond" truecount="3" falsecount="0"/>
-        <line num="20" count="9" type="cond" truecount="3" falsecount="0"/>
-        <line num="21" count="9" type="cond" truecount="3" falsecount="0"/>
-        <line num="22" count="9" type="cond" truecount="3" falsecount="0"/>
-        <line num="23" count="9" type="cond" truecount="2" falsecount="1"/>
-        <line num="24" count="9" type="cond" truecount="2" falsecount="1"/>
-        <line num="25" count="9" type="stmt"/>
-        <line num="27" count="9" type="stmt"/>
-        <line num="28" count="9" type="stmt"/>
-        <line num="29" count="9" type="cond" truecount="1" falsecount="0"/>
-        <line num="31" count="9" type="stmt"/>
+        <line num="11" count="33" type="stmt"/>
+        <line num="12" count="11" type="stmt"/>
+        <line num="13" count="11" type="stmt"/>
+        <line num="15" count="11" type="stmt"/>
+        <line num="17" count="11" type="stmt"/>
+        <line num="18" count="11" type="stmt"/>
+        <line num="19" count="11" type="cond" truecount="3" falsecount="0"/>
+        <line num="20" count="11" type="cond" truecount="3" falsecount="0"/>
+        <line num="21" count="11" type="cond" truecount="3" falsecount="0"/>
+        <line num="22" count="11" type="cond" truecount="3" falsecount="0"/>
+        <line num="23" count="11" type="cond" truecount="3" falsecount="0"/>
+        <line num="24" count="11" type="cond" truecount="3" falsecount="0"/>
+        <line num="25" count="11" type="stmt"/>
+        <line num="27" count="11" type="stmt"/>
+        <line num="28" count="11" type="stmt"/>
+        <line num="29" count="11" type="cond" truecount="1" falsecount="0"/>
+        <line num="31" count="11" type="stmt"/>
       </file>
       <file name="round.ts" path="/home/do0dleman/Documents/vscode/websites/frontend/do0dleColors/src/utils/round.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="7" count="2" type="stmt"/>
-        <line num="8" count="19" type="stmt"/>
+        <line num="8" count="23" type="stmt"/>
       </file>
     </package>
   </project>

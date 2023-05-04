@@ -7,4 +7,6 @@ test('rgb to hsl', () => {
     expect(rgbToHsl([20, 211, 110])).toStrictEqual([148, 0.827, 0.453])
     expect(rgbToHsl([189, 211, 17])).toStrictEqual([67, 0.851, 0.447])
     expect(rgbToHsl([92, 201, 24])).toStrictEqual([97, 0.787, 0.441])
+    expect(rgbToHsl([166, 123, 244])).toStrictEqual([261, 0.847, 0.72])
+    expect(rgbToHsl([210, 123, 185])).toStrictEqual([317, 0.492, 0.653])
 })
