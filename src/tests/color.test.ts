@@ -39,3 +39,7 @@ test('shiftL test', () => {
     expect(color.s).toBe(color.s)
     expect(color.l).toBe(1 - .2)
 })
+test('getCssHsl test', () => {
+    const color = new Color([1, 1, 1], 'hsl')
+    expect(color.getCssHsl()).toBe('hsl(1deg, 100%, 100%)')
+})

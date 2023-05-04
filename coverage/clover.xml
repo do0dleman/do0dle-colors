@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683184742995" clover="3.2.0">
-  <project timestamp="1683184742996" name="All files">
-    <metrics statements="61" coveredstatements="61" conditionals="30" coveredconditionals="30" methods="8" coveredmethods="8" elements="99" coveredelements="99" complexity="0" loc="61" ncloc="61" packages="2" files="4" classes="4"/>
+<coverage generated="1683204663724" clover="3.2.0">
+  <project timestamp="1683204663724" name="All files">
+    <metrics statements="62" coveredstatements="62" conditionals="30" coveredconditionals="30" methods="9" coveredmethods="9" elements="101" coveredelements="101" complexity="0" loc="62" ncloc="62" packages="2" files="4" classes="4"/>
     <package name="color">
-      <metrics statements="32" coveredstatements="32" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
+      <metrics statements="33" coveredstatements="33" conditionals="9" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="color.ts" path="/home/do0dleman/Documents/vscode/websites/frontend/do0dleColors/src/color/color.ts">
-        <metrics statements="32" coveredstatements="32" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
+        <metrics statements="33" coveredstatements="33" conditionals="9" coveredconditionals="9" methods="4" coveredmethods="4"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="11" count="7" type="stmt"/>
-        <line num="12" count="7" type="stmt"/>
-        <line num="13" count="7" type="stmt"/>
-        <line num="20" count="7" type="stmt"/>
-        <line num="22" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="24" count="7" type="cond" truecount="3" falsecount="0"/>
-        <line num="26" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="28" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="22" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="8" type="cond" truecount="3" falsecount="0"/>
+        <line num="26" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="8" type="cond" truecount="1" falsecount="0"/>
         <line num="29" count="2" type="stmt"/>
         <line num="30" count="2" type="stmt"/>
         <line num="31" count="2" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
-        <line num="34" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="8" type="cond" truecount="1" falsecount="0"/>
         <line num="35" count="1" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
-        <line num="40" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="41" count="3" type="stmt"/>
-        <line num="42" count="3" type="stmt"/>
-        <line num="43" count="3" type="stmt"/>
-        <line num="45" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="40" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="41" count="4" type="stmt"/>
+        <line num="42" count="4" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
+        <line num="45" count="8" type="cond" truecount="1" falsecount="0"/>
         <line num="46" count="1" type="stmt"/>
         <line num="47" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
         <line num="53" count="1" type="stmt"/>
         <line num="56" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
       </file>
     </package>
     <package name="utils">

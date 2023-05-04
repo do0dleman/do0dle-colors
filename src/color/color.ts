@@ -52,6 +52,9 @@ export default class Color {
         const hslArray: hsl = [this.h, this.s, this.l]
         return hslArray
     }
+    getCssHsl() {
+        return `hsl(${this.h}deg, ${this.s * 100}%, ${this.l * 100}%)`
+    }
     shiftL(step: number) {
         this.l = round(this.l + step)
     }
