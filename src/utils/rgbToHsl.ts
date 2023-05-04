@@ -1,5 +1,6 @@
 import hsl from "../types/hslType";
 import rgb from "../types/rgbType";
+import round from "./round";
 
 /**
  * Converts rgb color to hsl color
@@ -11,7 +12,7 @@ export default function rgbToHsl(rgb: rgb): hsl {
     const max = Math.max(...normalizedRgb)
     const min = Math.min(...normalizedRgb)
 
-    const l = Math.min(Math.round(0.5 * (max + min) * 1000) / 1000, 1)
+    const l = Math.min(round(0.5 * (max + min)), 1)
 
     let hue = 0
     const [r, g, b] = normalizedRgb
@@ -24,7 +25,7 @@ export default function rgbToHsl(rgb: rgb): hsl {
     hue = Math.round(hue)
 
     let s = (max - min) / (1 - Math.abs(2 * l - 1))
-    s = Math.min(Math.round(s * 1000) / 1000, 1)
+    s = Math.min(round(s), 1)
     if (l === 1) s = 0
 
     return [hue, s, l]
