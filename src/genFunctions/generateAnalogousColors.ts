@@ -1,7 +1,13 @@
 import Color from "../color/color"
 import round from "../utils/round"
 
-
+/**
+ * Generates analogous colors
+ * @param {Color} seedColor color that is used to generate analogous colors 
+ * @param {number} colorAmount amount of generated analogous colors 
+ * @param {number} [step] hue value step     
+ * @returns {Color[]} array of generated colors
+ */
 export default function generateAnalogousColors(seedColor: Color, colorAmount: number, step?: number) {
 
     const colors: Color[] = [seedColor]
