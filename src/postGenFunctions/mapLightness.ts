@@ -2,8 +2,9 @@ import Color from "../color/color";
 import ndRand from "../randomFuntions/ndRand";
 
 /**
- * returns array of colors with changed lightness except the first one according to normal distribution
- * @param colors array of colors
+ * returns an array of colors with changed lightness except the first 
+ * one according to normal distribution
+ * @param {Color} colors array of colors
  * @returns {Color[]}
  */
 export default function mapLightness(colors: Color[]) {

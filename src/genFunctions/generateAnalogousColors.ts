@@ -1,5 +1,4 @@
 import Color from "../color/color"
-import mapSaturation from "../postGenFunctions/mapSaturation"
 import round from "../utils/round"
 
 /**
