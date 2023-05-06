@@ -1,4 +1,5 @@
 import Color from "../color/color"
+import mapSaturation from "../postGenFunctions/mapSaturation"
 import round from "../utils/round"
 
 /**
@@ -10,7 +11,7 @@ import round from "../utils/round"
  */
 export default function generateAnalogousColors(seedColor: Color, colorAmount: number, step?: number) {
 
-    const colors: Color[] = [seedColor]
+    let colors: Color[] = [seedColor]
     if (step == undefined) step = round((360 / colorAmount) * Math.random())
 
     for (let i = 1; i < colorAmount; i++) {
@@ -26,12 +27,5 @@ export default function generateAnalogousColors(seedColor: Color, colorAmount: n
         colors.push(color)
     }
 
-    colors.sort((a, b) => {
-        let h1 = a.h
-        let h2 = b.h
-        if (a.h > 180) h1 -= 360
-        if (b.h > 180) h2 -= 360
-        return h1 - h2
-    })
     return colors
 }
