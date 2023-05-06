@@ -1,9 +1,13 @@
 import Color from "../color/color";
 import ndRand from "../randomFuntions/ndRand"
-import quadraticRand from "../randomFuntions/quadraticRand";
-import reverseQuadraticRand from "../randomFuntions/reverseQuadraticRand";
 import round from "../utils/round";
 
+/**
+ * returns an array of colors with changed saturation except the first 
+ * one according to normal distribution
+ * @param {Color} colors array of colors
+ * @returns {Color[]}
+ */
 export default function mapSaturation(colors: Color[]): Color[] {
     const initialS = colors[0].s
 
