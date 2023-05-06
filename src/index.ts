@@ -4,7 +4,7 @@ import generateColors from "./generateColors";
 
 const color = new Color('#fe3107')
 const colorAmount = 10
-const colors = generateColors(color, colorAmount)
+const colors = generateColors(color, colorAmount, 'triadic')
 
 const handleRequest = (req: http.IncomingMessage, res: http.ServerResponse<http.IncomingMessage> & { req: http.IncomingMessage; }) => {
     res.writeHead(200, {
