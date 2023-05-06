@@ -55,6 +55,14 @@ export default class Color {
     getCssHsl() {
         return `hsl(${this.h}deg, ${this.s * 100}%, ${this.l * 100}%)`
     }
+    shiftH(step: number) {
+        let hue = round((this.h + step) % 360)
+        if (hue < 0) hue = hue + 360
+        this.h = hue
+    }
+    shiftS(step: number) {
+        this.s = round(this.s + step)
+    }
     shiftL(step: number) {
         this.l = round(this.l + step)
     }

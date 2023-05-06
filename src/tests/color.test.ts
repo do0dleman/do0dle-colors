@@ -32,6 +32,20 @@ test('getHslArray test', () => {
     expect(color.s).toBe(arr[1])
     expect(color.l).toBe(arr[2])
 })
+test('shiftH test', () => {
+    const color = new Color([1, 1, 1], 'hsl')
+    color.shiftH(10)
+    expect(color.h).toBe(11)
+    expect(color.s).toBe(1)
+    expect(color.l).toBe(1)
+})
+test('shiftS test', () => {
+    const color = new Color([1, 1, 1], 'hsl')
+    color.shiftS(-.2)
+    expect(color.h).toBe(1)
+    expect(color.s).toBe(1 - .2)
+    expect(color.l).toBe(1)
+})
 test('shiftL test', () => {
     const color = new Color([1, 1, 1], 'hsl')
     color.shiftL(-.2)
