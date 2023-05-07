@@ -11,8 +11,6 @@ export default function generateColors(color: Color, colorAmount: number, method
     if (method === undefined) method = getRandomMethod()
     let genFunction = genMethodMap.get(method)!
 
-    console.log(method)
-
     let colors = genFunction(color, colorAmount)
 
     if (method != 'monochromatic') colors = mapSaturation(colors)
