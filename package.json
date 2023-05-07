@@ -8,9 +8,13 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "color schemes",
+    "generate colors",
+    "complimentary colors"
+  ],
+  "author": "do0dleman",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.1",
     "@types/node": "^18.16.0",
