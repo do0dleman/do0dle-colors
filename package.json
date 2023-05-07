@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npx nodemon",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "build": "tsc"
   },
   "keywords": [
     "color schemes",
