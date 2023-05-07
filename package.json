@@ -9,6 +9,10 @@
     "test:watch": "jest --watch",
     "build": "tsc"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/do0dleman/do0dle-colors.git"
+  },
   "keywords": [
     "color schemes",
     "generate colors",
