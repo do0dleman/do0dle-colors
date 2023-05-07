@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/do0dleman/do0dle-colors.git"
   },
+  "files": [
+    "build/**/*"
+  ],
   "keywords": [
     "color schemes",
     "generate colors",
