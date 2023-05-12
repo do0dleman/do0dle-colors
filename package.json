@@ -1,8 +1,9 @@
 {
   "name": "do0dle-colors",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "a library to generate color schemes.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "dev": "npx nodemon",
     "test": "jest --coverage",
@@ -14,7 +15,7 @@
     "url": "git+https://github.com/do0dleman/do0dle-colors.git"
   },
   "files": [
-    "build/**/*"
+    "lib"
   ],
   "keywords": [
     "color schemes",
