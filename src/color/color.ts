@@ -99,7 +99,7 @@ export default class Color {
      * Get the hsl array of color
      * @returns {hsl} returns hsl array
      */
-    getHslArray() {
+    getHslArray(): hsl {
         const hslArray: hsl = [this.h, this.s, this.l]
         return hslArray
     }
@@ -107,8 +107,8 @@ export default class Color {
      * Get the css hsl string
      * @returns {string} hsl string in css format
      */
-    getCssHsl() {
-        return `hsl(${this.h}deg, ${this.s * 100}%, ${this.l * 100}%)`
+    getCssHsl(): string {
+        return `hsl(${Math.round(this.h)}deg ${Math.round(this.s * 100)}% ${Math.round(this.s * 100)}%)`
     }
     /**
      * Shifts hue value by a step value
