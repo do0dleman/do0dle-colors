@@ -1,4 +1,4 @@
-import hexToRgb from "../utils/hexToRgb"
+import hexToRgb from "../utils/convert/hexToRgb"
 
 test('6 char hex to rgb', () => {
     expect(hexToRgb('#ffffff')).toStrictEqual([255, 255, 255])

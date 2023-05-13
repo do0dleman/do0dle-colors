@@ -1,5 +1,5 @@
-import hex from "../types/hexType";
-import rgb from "../types/rgbType";
+import hex from "../../types/hexType";
+import rgb from "../../types/rgbType";
 /**
  * Converts hex color to rgb color
  * @param {hex} hex hex value represented by a string 

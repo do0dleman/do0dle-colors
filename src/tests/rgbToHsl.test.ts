@@ -1,4 +1,4 @@
-import rgbToHsl from '../utils/rgbToHsl'
+import rgbToHsl from "../utils/convert/rgbToHsl"
 
 test('rgb to hsl', () => {
     expect(rgbToHsl([255, 255, 255])).toStrictEqual([0, 0, 1])

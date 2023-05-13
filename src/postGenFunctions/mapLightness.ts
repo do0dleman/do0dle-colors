@@ -1,5 +1,6 @@
 import Color from "../color/color";
 import ndRand from "../randomFuntions/ndRand";
+import round from "../utils/round";
 
 /**
  * returns an array of colors with changed lightness except the first 
@@ -7,7 +8,7 @@ import ndRand from "../randomFuntions/ndRand";
  * @param {Color} colors array of colors
  * @returns {Color[]}
  */
-export default function mapLightness(colors: Color[]) {
+export default function mapLightness(colors: Color[]): Color[] {
 
     const initialL = colors[1].l
 
@@ -15,7 +16,7 @@ export default function mapLightness(colors: Color[]) {
 
         if (index == 1) return color
 
-        color.l = ndRand(initialL)
+        color.l = round(ndRand(initialL))
         return color
     })
 }

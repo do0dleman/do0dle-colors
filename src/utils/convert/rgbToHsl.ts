@@ -1,14 +1,14 @@
-import hsl from "../types/hslType";
-import rgb from "../types/rgbType";
-import round from "./round";
+import hsl from "../../types/hslType";
+import rgb from "../../types/rgbType";
+import round from "../round";
 
 /**
  * Converts rgb color to hsl color
  * @param {rgb} rgb rgb color value represented by an array 
  * @returns {hsl}   hsl color value represented by an array
  */
-export default function rgbToHsl(rgb: rgb): hsl {
-    const normalizedRgb = rgb.map(val => val / 255)
+export default function rgbToHsl(rgb: rgb, isNormalized?: boolean): hsl {
+    const normalizedRgb = isNormalized ? rgb : rgb.map(val => val / 255)
     const max = Math.max(...normalizedRgb)
     const min = Math.min(...normalizedRgb)
 
