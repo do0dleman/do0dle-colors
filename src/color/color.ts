@@ -108,7 +108,7 @@ export default class Color {
      * @returns {string} hsl string in css format
      */
     getCssHsl(): string {
-        return `hsl(${Math.round(this.h)}deg ${Math.round(this.s * 100)}% ${Math.round(this.s * 100)}%)`
+        return `hsl(${Math.round(this.h)}deg ${Math.round(this.s * 100)}% ${Math.round(this.l * 100)}%)`
     }
     /**
      * Shifts hue value by a step value
