@@ -5,6 +5,7 @@ import mapSaturation from "../postGenFunctions/mapSaturation";
 import sortByHue from "../sortFunctions/sortByHue";
 import sortBySaturation from "../sortFunctions/sortBySat";
 import genMethod from "../types/genMethod";
+import sortByLightness from "../sortFunctions/sortByLight";
 
 /**
  * Generates color scheme based on seed color
@@ -24,7 +25,7 @@ export default function generateColors(color: Color, colorAmount: number, method
     colors = mapLightness(colors)
 
     if (method != 'monochromatic') colors = sortByHue(colors)
-    if (method == 'monochromatic') colors = sortBySaturation(colors)
+    if (method == 'monochromatic') colors = sortByLightness(colors)
 
     return colors
 
