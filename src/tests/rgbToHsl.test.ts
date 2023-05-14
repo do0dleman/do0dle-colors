@@ -10,3 +10,8 @@ test('rgb to hsl', () => {
     expect(rgbToHsl([166, 123, 244])).toStrictEqual([261, 0.847, 0.72])
     expect(rgbToHsl([210, 123, 185])).toStrictEqual([317, 0.492, 0.653])
 })
+test('normalized rgb to hsl', () => {
+    expect(rgbToHsl([0.2, .2, .6], true)).toStrictEqual([240, 0.5, 0.4])
+    expect(rgbToHsl([0.5, .53, .23], true)).toStrictEqual([66, 0.395, 0.38])
+    expect(rgbToHsl([0.6, .8, .76], true)).toStrictEqual([168, 0.333, 0.7])
+})

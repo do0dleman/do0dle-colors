@@ -5,4 +5,5 @@ test('comma test', () => {
     expect(cssRgbToRgb('rgb(13%, 60%, 11%)')).toStrictEqual(cssRgbToRgb('rgb(13% 60% 11%)'))
     expect(cssRgbToRgb('rgb(255, 11, 231)')).toStrictEqual(cssRgbToRgb('rgb(255 11 231)'))
     expect(cssRgbToRgb('rgb(0%, 10%, 78%)')).toStrictEqual(cssRgbToRgb('rgb(0% 10% 78%)'))
+    expect(cssRgbToRgb('rgb(0%, 10%, 78% / .2)')).toStrictEqual(cssRgbToRgb('rgb(0% 10% 78%)'))
 })

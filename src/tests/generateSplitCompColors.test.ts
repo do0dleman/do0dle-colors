@@ -21,3 +21,12 @@ test('5 colors, 1 splitted', () => {
         new Color([350, 100, 50], 'hsl'),
     ])
 })
+test('4 colors, 0 splitted', () => {
+    const color = new Color([180, 100, 50], 'hsl')
+    expect(generateSplitComplementaryColors(color, 4, 0)).toStrictEqual([
+        new Color([180, 100, 50], 'hsl'),
+        new Color([0, 100, 50], 'hsl'),
+        new Color([180, 100, 50], 'hsl'),
+        new Color([0, 100, 50], 'hsl'),
+    ])
+})
