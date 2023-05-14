@@ -1,9 +1,9 @@
 import Color from "../color/color";
 
 /**
- * Generates tridic colors
- * @param {Color} seedColor color that is used to generate tridic colors
- * @param {number} colorAmount amount of generated tridic colors 
+ * Generates triadic colors
+ * @param {Color} seedColor color that is used to generate triadic colors
+ * @param {number} colorAmount amount of generated triadic colors 
  * @returns {Color[]} array of generated colors
  */
 export default function generateTriadColors(seedColor: Color, colorAmount: number): Color[] {
