@@ -26,11 +26,9 @@ test('color constructor', () => {
     expect(color.l).toBe(color2.l)
 })
 test('getHslArray test', () => {
-    const color = new Color([1, 1, 1], 'hsl', true)
-    const arr = color.getHslArray()
-    expect(color.h).toBe(arr[0])
-    expect(color.s).toBe(arr[1])
-    expect(color.l).toBe(arr[2])
+    const initArr = [120, 1, 1]
+    const color = new Color([120, 1, 1], 'hsl')
+    expect(color.getHslArray()).toStrictEqual(initArr)
 })
 test('shiftH test', () => {
     const color = new Color([1, 1, 1], 'hsl', true)

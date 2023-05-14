@@ -100,7 +100,7 @@ export default class Color {
      * @returns {hsl} returns hsl array
      */
     getHslArray(): hsl {
-        const hslArray: hsl = [this.h, this.s, this.l]
+        const hslArray: hsl = [this.h, this.s * 100, this.l * 100]
         return hslArray
     }
     /**
