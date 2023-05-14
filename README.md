@@ -72,6 +72,21 @@ new Color(1, 0.039, 0.906, 'rgb', true)
 new Color(0.85, 1, 0.52, 'hsl', true)
 ```
 
+### Color get methods 
+
+You can **Color** color value as:
+
+* css hsl property string:
+```js
+const color = new Color([306, 100, 52], 'hsl')
+color.getCssHsl() // 'hsl(306deg 100% 52%)'
+```
+* hsl array:
+```js
+const color = new Color([306, 100, 52], 'hsl')
+color.getHslArray() // [306, 100, 52]
+```
+
 ## License
 
 See the [LICENSE](https://github.com/do0dleman/do0dle-colors/blob/master/LICENSE.md) file for license rights and limitations (MIT).
