@@ -54,6 +54,6 @@ test('shiftL test', () => {
     expect(color.l).toBe(1 - .2)
 })
 test('getCssHsl test', () => {
-    expect(new Color([1, 1, 1], 'hsl', true).getCssHsl()).toBe('hsl(360deg, 100%, 100%)')
-    expect(new Color([120, 50, 12], 'hsl').getCssHsl()).toBe('hsl(120deg, 50%, 12%)')
+    expect(new Color([1, 1, 1], 'hsl', true).getCssHsl()).toBe('hsl(360deg 100% 100%)')
+    expect(new Color([120, 50, 12], 'hsl').getCssHsl()).toBe('hsl(120deg 50% 12%)')
 })
