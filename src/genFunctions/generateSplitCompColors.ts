@@ -2,10 +2,10 @@ import Color from "../color/color";
 
 /**
  * Generates split complementary colors
- * @param seedColor color that is used to generate split complementary colors
- * @param colorAmount amount of generated split complementary colors
- * @param offset offset between split complimentary colors
- * @param splitAmount amount of splitted color
+ * @param {Color} seedColor color that is used to generate split complementary colors
+ * @param {number} colorAmount amount of generated split complementary colors
+ * @param {number} [offset] offset between split complimentary colors
+ * @param {number} [splitAmount] amount of splitted color
  * @returns {Color[]} array of generated colors
  */
 export default function generateSplitComplementaryColors(

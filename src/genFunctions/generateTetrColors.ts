@@ -5,7 +5,7 @@ import round from "../utils/round";
  * Generates tetraidic colors
  * @param {Color} seedColor color that is used to generate tetraidic colors
  * @param {number} colorAmount amount of generated tetraidic colors 
- * @param {number} ascpectRatio ratio between sides in [0; 1]
+ * @param {number} [ascpectRatio] ratio between sides in [0; 1]
  * @returns {Color[]} array of generated colors
  */
 export default function generateTetraidicColors(seedColor: Color, colorAmount: number, ascpectRatio?: number) {

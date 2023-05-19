@@ -1,3 +1,10 @@
+import generateAnalogousColors from "../genFunctions/generateAnalogousColors"
+import generateColorShades from "../genFunctions/generateColorShades"
+import generateComplimentaryColors from "../genFunctions/generateCompColors"
+import generateQuadraticColors from "../genFunctions/generateQuadColors"
+import generateSplitComplementaryColors from "../genFunctions/generateSplitCompColors"
+import generateTetraidicColors from "../genFunctions/generateTetrColors"
+import generateTriadColors from "../genFunctions/generateTriadColors"
 import genMethod from "../types/genMethod"
 import hex from "../types/hexType"
 import hsl from "../types/hslType"
@@ -141,5 +148,66 @@ export default class Color {
     */
     getColorScheme(colorAmount: number, method?: genMethod): Color[] {
         return generateColors(this, colorAmount, method)
+    }
+    /**
+    * Generates color shades based on seedColor.
+    * @param {number} colorAmount amount of generated color shades
+    * @param {number} [step] lightnes value step
+    * @returns {Color[]} array of generated color shades
+    */
+    getShades(colorAmount: number, step?: number): Color[] {
+        return generateColorShades(this, colorAmount, step)
+    }
+    /**
+    * Generates analogous colors
+    * @param {number} colorAmount amount of generated analogous colors 
+    * @param {number} [step] hue value step     
+    * @returns {Color[]} array of generated colors
+    */
+    getAnalogousScheme(colorAmount: number, step?: number): Color[] {
+        return generateAnalogousColors(this, colorAmount, step)
+    }
+    /**
+    * Generates complementary colors
+    * @param {number} colorAmount amount of generated complementary colors
+    * @returns {Color[]} array of generated colors
+    */
+    getComplementary(colorAmount: number): Color[] {
+        return generateComplimentaryColors(this, colorAmount)
+    }
+    /**
+    * Generates split complementary colors
+    * @param {number} colorAmount amount of generated split complementary colors
+    * @param {number} [offset] offset between split complimentary colors
+    * @param {number} [splitAmount] amount of splitted color
+    * @returns {Color[]} array of generated colors
+    */
+    getSplitComplementary(colorAmount: number, offset?: number, splitAmount?: number): Color[] {
+        return generateSplitComplementaryColors(this, colorAmount, offset, splitAmount)
+    }
+    /**
+    * Generates quadratic colors
+    * @param {number} colorAmount amount of generated quadratic colors 
+    * @returns {Color[]} array of generated colors
+    */
+    getQuadratic(colorAmount: number): Color[] {
+        return generateQuadraticColors(this, colorAmount)
+    }
+    /**
+    * Generates tetraidic colors
+    * @param {number} colorAmount amount of generated tetraidic colors 
+    * @param {number} [ascpectRatio] ratio between sides in [0; 1]
+    * @returns {Color[]} array of generated colors
+    */
+    getTetraidic(colorAmount: number, ascpectRatio?: number): Color[] {
+        return generateTetraidicColors(this, colorAmount, ascpectRatio)
+    }
+    /**
+    * Generates triadic colors
+    * @param {number} colorAmount amount of generated triadic colors 
+    * @returns {Color[]} array of generated colors
+    */
+    getTriadic(colorAmount: number): Color[] {
+        return generateTriadColors(this, colorAmount)
     }
 }
