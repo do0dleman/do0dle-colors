@@ -164,7 +164,7 @@ export default class Color {
     * @param {number} [step] hue value step     
     * @returns {Color[]} array of generated colors
     */
-    getAnalogousScheme(colorAmount: number, step?: number): Color[] {
+    getAnalogous(colorAmount: number, step?: number): Color[] {
         return generateAnalogousColors(this, colorAmount, step)
     }
     /**
