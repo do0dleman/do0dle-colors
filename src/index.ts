@@ -1,5 +1,4 @@
 import Color from "./color/color";
-import genMethodMap from "./color/genMethodMap";
-import sortBySaturation from "./sortFunctions/sortBySat";
+import genMethods from "./color/genMethods";
 
-export { Color, genMethodMap }
+export { Color, genMethods }

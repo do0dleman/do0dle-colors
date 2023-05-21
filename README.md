@@ -31,6 +31,20 @@ You can specify color scheme generation method
 ```js
 color.getColorScheme(10, 'monochromatic')
 ```
+Or using distinct methods for more customization
+```js
+// identical to color.getColorScheme(10, 'analogous')
+color.getAnalogous(10) 
+
+// but you can specify more parameters
+const step = 10
+color.getAnalogous(10, step) 
+``` 
+You can get array of avalible generation methods
+```js
+import { genMethods } from 'do0dle-colors'
+```
+
 Here is the table of avalible generation methods:
 
 |    Color scheme     |
