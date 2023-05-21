@@ -1,7 +1,11 @@
 import hsl from "../../types/hslType";
 import rgb from "../../types/rgbType";
 
-
+/**
+ * Converts hsl color to rgb color
+ * @param {hsl} hsl hsl color value represented by an array 
+ * @returns {rgb}   rgb color value represented by an array
+ */
 export default function hslToRgb(hsl: hsl): rgb {
 
     let [H, S, L] = hsl
