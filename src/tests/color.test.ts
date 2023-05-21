@@ -1,4 +1,5 @@
 import Color from "../color/color"
+import hslToRgb from "../utils/convert/hslToRgb"
 
 test('hsl constructor', () => {
     const color = new Color([0.2, .7, .2], 'hsl', true)
@@ -54,4 +55,11 @@ test('shiftL test', () => {
 test('getCssHsl test', () => {
     expect(new Color([1, 1, 1], 'hsl', true).getCssHsl()).toBe('hsl(360deg 100% 100%)')
     expect(new Color([120, 50, 12], 'hsl').getCssHsl()).toBe('hsl(120deg 50% 12%)')
+})
+test('getRgbArray', () => {
+    expect(new Color([75, 79, 54]).getRgbArray()).toStrictEqual(hslToRgb([75, 0.79, .54]))
+})
+test('getCssRgb', () => {
+    const rgb: [number, number, number] = [255, 189, 73]
+    expect(new Color(rgb, 'rgb').getCssRgb()).toStrictEqual(`rgb(255 188 73)`)
 })

@@ -8,9 +8,11 @@ import generateTriadColors from "../genFunctions/generateTriadColors"
 import genMethod from "../types/genMethod"
 import hex from "../types/hexType"
 import hsl from "../types/hslType"
+import rgb from "../types/rgbType"
 import cssHslToHsl from "../utils/convert/cssHslToHsl"
 import cssRgbToRgb from "../utils/convert/cssRgbToRgb"
 import hexToRgb from "../utils/convert/hexToRgb"
+import hslToRgb from "../utils/convert/hslToRgb"
 import rgbToHsl from "../utils/convert/rgbToHsl"
 import round from "../utils/round"
 import generateColors from "./generateColors"
@@ -103,7 +105,7 @@ export default class Color {
         }
     }
     /**
-     * Get the hsl array of color
+     * Get the hsl array of a color
      * @returns {hsl} returns hsl array
      */
     getHslArray(): hsl {
@@ -111,11 +113,27 @@ export default class Color {
         return hslArray
     }
     /**
-     * Get the css hsl string
+     * Get the rgb array of a color
+     * @returns {rgb} returns rgb array
+     */
+    getRgbArray(): rgb {
+        const rgbArray: rgb = hslToRgb([this.h, this.s, this.l])
+        return rgbArray
+    }
+    /**
+     * Get the css hsl string of a color
      * @returns {string} hsl string in css format
      */
     getCssHsl(): string {
         return `hsl(${Math.round(this.h)}deg ${Math.round(this.s * 100)}% ${Math.round(this.l * 100)}%)`
+    }
+    /**
+     * Get the css rgb string of a color
+     * @returns {string} rgb string in css format
+     */
+    getCssRgb(): string {
+        const rgb = hslToRgb([this.h, this.s, this.l])
+        return `rgb(${rgb[0]} ${rgb[1]} ${rgb[2]})`
     }
     /**
      * Shifts hue value by a step value
