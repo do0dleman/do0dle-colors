@@ -11,12 +11,13 @@ import round from "../utils/round";
 export default function mapLightness(colors: Color[]): Color[] {
 
     const initialL = colors[1].l
+    const sigma = Math.random() / 1.8 + 0.7
 
     return colors.map((color, index) => {
 
         if (index == 1) return color
 
-        color.l = round(ndRand(initialL))
+        color.l = round(ndRand(initialL, sigma))
         return color
     })
 }

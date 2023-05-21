@@ -9,13 +9,15 @@ import round from "../utils/round";
  * @returns {Color[]}
  */
 export default function mapSaturation(colors: Color[]): Color[] {
+
     const initialS = colors[0].s
+    const sigma = Math.random() / 1.8 + 0.7
 
     return colors.map((color, index) => {
 
         if (index == 1) return color
 
-        color.s = round(ndRand(initialS))
+        color.s = round(ndRand(initialS, sigma))
         return color
     })
 }
