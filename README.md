@@ -81,10 +81,20 @@ You can **Color** color value as:
 const color = new Color([306, 100, 52], 'hsl')
 color.getCssHsl() // 'hsl(306deg 100% 52%)'
 ```
+* css rgb property string:
+```js
+const color = new Color([306, 100, 52], 'hsl')
+color.getCssRgb() // 'rgb(255 10 231)'
+```
 * hsl array:
 ```js
 const color = new Color([306, 100, 52], 'hsl')
 color.getHslArray() // [306, 100, 52]
+```
+* rgb array:
+```js
+const color = new Color([306, 100, 52], 'hsl')
+color.getRgbArray() // [255, 10, 231]
 ```
 
 ## License
