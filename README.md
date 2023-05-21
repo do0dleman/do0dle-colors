@@ -2,7 +2,7 @@
 
 do0dle-colors is a color scheme generation library with no dependencies.
 
-The bundle size is [currently 2kB](https://bundlephobia.com/package/do0dle-colors@1.1.3).
+The bundle size is [currently 2kB](https://bundlephobia.com/package/do0dle-colors).
 
 ## Instalation
 
