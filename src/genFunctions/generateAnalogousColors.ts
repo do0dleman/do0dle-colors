@@ -10,7 +10,7 @@ import round from "../utils/round"
  */
 export default function generateAnalogousColors(seedColor: Color, colorAmount: number, step?: number) {
 
-    let colors: Color[] = [seedColor]
+    let colors: Color[] = [new Color(seedColor)]
     if (step == undefined) step = round((360 / colorAmount) * Math.random())
 
     for (let i = 1; i < colorAmount; i++) {

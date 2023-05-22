@@ -7,7 +7,7 @@ import Color from "../color/color";
  * @returns {Color[]} array of generated colors
  */
 export default function generateTriadColors(seedColor: Color, colorAmount: number): Color[] {
-    const colors: Color[] = [seedColor]
+    const colors: Color[] = [new Color(seedColor)]
 
     for (let i = 1; i < colorAmount; i++) {
         let color = new Color(colors[i - 1])

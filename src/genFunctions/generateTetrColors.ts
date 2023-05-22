@@ -9,7 +9,7 @@ import round from "../utils/round";
  * @returns {Color[]} array of generated colors
  */
 export default function generateTetraidicColors(seedColor: Color, colorAmount: number, ascpectRatio?: number) {
-    const colors = [seedColor]
+    const colors = [new Color(seedColor)]
 
     if (!ascpectRatio) ascpectRatio = round(Math.random())
     const shiftH1 = round(180 / (ascpectRatio + 1))
