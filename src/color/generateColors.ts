@@ -21,8 +21,10 @@ export default function generateColors(color: Color, colorAmount: number, method
 
     let colors = genFunction(color, colorAmount)
 
-    if (method != 'monochromatic') colors = mapSaturation(colors)
-    colors = mapLightness(colors)
+    if (method != 'monochromatic') {
+        colors = mapSaturation(colors)
+        colors = mapLightness(colors)
+    }
 
     if (method != 'monochromatic') colors = sortByHue(colors)
     if (method == 'monochromatic') colors = sortByLightness(colors)
