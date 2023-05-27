@@ -15,7 +15,7 @@ export default function mapSaturation(colors: Color[]): Color[] {
 
     return colors.map((color, index) => {
 
-        if (index == 1) return color
+        if (index == 0) return color
 
         color.s = round(ndRand(initialS, sigma))
         return color
