@@ -2,7 +2,7 @@
 
 do0dle-colors is a color scheme generation library with no dependencies.
 
-The bundle size is [currently 2kB](https://bundlephobia.com/package/do0dle-colors).
+The bundle size is [currently ~2kB](https://bundlephobia.com/package/do0dle-colors).
 
 ## Instalation
 
@@ -88,7 +88,7 @@ new Color(0.85, 1, 0.52, 'hsl', true)
 
 ### Color get methods 
 
-You can **Color** color value as:
+You can get **Color**'s color value as:
 
 * css hsl property string:
 ```js
