@@ -1,6 +1,6 @@
 {
   "name": "do0dle-colors",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "a library to generate color schemes.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
