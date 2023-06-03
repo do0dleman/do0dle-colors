@@ -16,7 +16,7 @@ import sortByLightness from "../sortFunctions/sortByLight";
  */
 export default function generateColors(color: Color, colorAmount: number, method?: genMethod): Color[] {
 
-    if (method === undefined) method = getRandomMethod()
+    if (method === undefined || method === 'random') method = getRandomMethod()
     let genFunction = genMethodMap.get(method)!
 
     let colors = genFunction(color, colorAmount)
