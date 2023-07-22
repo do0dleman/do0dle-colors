@@ -1,4 +1,4 @@
-import Color from "../color/color";
+import { Color } from "../color/color";
 import sortByLightness from "../sortFunctions/sortByLight";
 
 test('test sort by lightness', () => {

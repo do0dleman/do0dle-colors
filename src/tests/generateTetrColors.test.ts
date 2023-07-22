@@ -1,4 +1,4 @@
-import Color from "../color/color";
+import { Color } from "../color/color";
 import generateTetraidicColors from "../genFunctions/generateTetrColors";
 
 test('test aspect ratio 1', () => {

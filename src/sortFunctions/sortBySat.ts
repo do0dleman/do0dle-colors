@@ -1,4 +1,4 @@
-import Color from "../color/color";
+import { Color } from "../color/color";
 /**
  * returns sorted by saturation sorted array of colors
  * @param {Color} colors array of Colors

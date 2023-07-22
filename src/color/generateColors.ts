@@ -1,4 +1,4 @@
-import Color from "./color";
+import { Color } from "../color/color";
 import genMethodMap from "./genMethodMap";
 import mapLightness from "../postGenFunctions/mapLightness";
 import mapSaturation from "../postGenFunctions/mapSaturation";

@@ -1,4 +1,4 @@
-import Color from "../color/color";
+import { Color } from "../color/color";
 import ndRand from "../randomFuntions/ndRand"
 import round from "../utils/round";
 

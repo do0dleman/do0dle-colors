@@ -13,6 +13,7 @@ import cssHslToHsl from "../utils/convert/cssHslToHsl"
 import cssRgbToRgb from "../utils/convert/cssRgbToRgb"
 import hexToRgb from "../utils/convert/hexToRgb"
 import hslToRgb from "../utils/convert/hslToRgb"
+import rgbToHex from "../utils/convert/rgbToHex"
 import rgbToHsl from "../utils/convert/rgbToHsl"
 import round from "../utils/round"
 import generateColors from "./generateColors"
@@ -20,7 +21,7 @@ import generateColors from "./generateColors"
 type ColorTypes = 'rgb' | 'hsl'
 
 /** A representation of color */
-export default class Color {
+class Color {
     h: number = 0
     s: number = 0
     l: number = 0
@@ -135,6 +136,9 @@ export default class Color {
         const rgb = hslToRgb([this.h, this.s, this.l])
         return `rgb(${rgb[0]} ${rgb[1]} ${rgb[2]})`
     }
+    getCssHex(): hex {
+        return rgbToHex(hslToRgb([this.h, this.s, this.l]))
+    }
     /**
      * Shifts hue value by a step value
      * @param step amount of adjustment to hue value
@@ -229,3 +233,5 @@ export default class Color {
         return generateTriadColors(this, colorAmount)
     }
 }
+
+export { Color }

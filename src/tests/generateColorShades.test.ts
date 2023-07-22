@@ -1,4 +1,4 @@
-import Color from "../color/color";
+import { Color } from "../color/color";
 import generateColorShades from "../genFunctions/generateColorShades";
 
 test('color shades l always > 0', () => {

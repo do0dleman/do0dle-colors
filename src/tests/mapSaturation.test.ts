@@ -1,4 +1,4 @@
-import Color from "../color/color"
+import { Color } from "../color/color";
 import mapSaturation from "../postGenFunctions/mapSaturation"
 
 test('1st color is not changed', () => {

@@ -1,4 +1,4 @@
-import Color from "../color/color"
+import { Color } from "../color/color";
 import generateSplitComplementaryColors from "../genFunctions/generateSplitCompColors"
 
 test('5 colors, 2 splitted', () => {

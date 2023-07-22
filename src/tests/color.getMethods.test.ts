@@ -1,4 +1,4 @@
-import Color from "../color/color";
+import { Color } from "../color/color";
 import generateAnalogousColors from "../genFunctions/generateAnalogousColors";
 import generateColorShades from "../genFunctions/generateColorShades";
 import generateComplimentaryColors from "../genFunctions/generateCompColors";

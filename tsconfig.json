@@ -4,10 +4,10 @@
     "lib": [
       "ES7"
     ],
-    "module": "commonjs",
+    "module": "ES2020",
     "declaration": true,
     "rootDir": "src",
-    "resolveJsonModule": true,
+    // "resolveJsonModule": true,
     "allowJs": true,
     "outDir": "lib",
     "esModuleInterop": true,

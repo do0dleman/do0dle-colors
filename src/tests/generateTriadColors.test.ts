@@ -1,4 +1,4 @@
-import Color from "../color/color";
+import { Color } from "../color/color";
 import generateTriadColors from "../genFunctions/generateTriadColors";
 
 test('4 triadic colors', () => {

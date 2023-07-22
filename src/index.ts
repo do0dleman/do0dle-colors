@@ -1,5 +1,6 @@
-import Color from "./color/color";
+import { Color } from "./color/color";
 import genMethods from "./color/genMethods";
+import genMethod from "./types/genMethod";
 
-console.log(genMethods)
 export { Color, genMethods }
+export type { genMethod }

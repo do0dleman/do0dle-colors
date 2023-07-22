@@ -1,4 +1,4 @@
-import Color from "../color/color"
+import { Color } from "../color/color";
 import hslToRgb from "../utils/convert/hslToRgb"
 
 test('hsl constructor', () => {
@@ -62,4 +62,8 @@ test('getRgbArray', () => {
 test('getCssRgb', () => {
     const rgb: [number, number, number] = [255, 189, 73]
     expect(new Color(rgb, 'rgb').getCssRgb()).toStrictEqual(`rgb(255 188 73)`)
+})
+test('getCssHex', () => {
+    const rgb: [number, number, number] = [255, 189, 73]
+    expect(new Color(rgb, 'rgb').getCssHex()).toStrictEqual(`#ffbc49`)
 })
