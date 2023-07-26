@@ -20,5 +20,6 @@
     "jest.config.js",
     "coverage/",
     "lib/",
+    "src/tests/",
   ]
 }
