@@ -100,6 +100,11 @@ color.getCssHsl() // 'hsl(306deg 100% 52%)'
 const color = new Color([306, 100, 52], 'hsl')
 color.getCssRgb() // 'rgb(255 10 231)'
 ```
+* hex string:
+```js
+const color = new Color([306, 100, 52], 'hsl')
+color.getCssHex() // '#FF0AE7'
+```
 * hsl array:
 ```js
 const color = new Color([306, 100, 52], 'hsl')
