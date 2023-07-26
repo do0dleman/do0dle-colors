@@ -136,6 +136,10 @@ class Color {
         const rgb = hslToRgb([this.h, this.s, this.l])
         return `rgb(${rgb[0]} ${rgb[1]} ${rgb[2]})`
     }
+    /**
+     * Get the hex string of a color
+     * @returns {hex} hex string in
+     */
     getCssHex(): hex {
         return rgbToHex(hslToRgb([this.h, this.s, this.l]))
     }
