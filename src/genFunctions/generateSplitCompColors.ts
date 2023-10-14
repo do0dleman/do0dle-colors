@@ -12,7 +12,7 @@ export default function generateSplitComplementaryColors(
     seedColor: Color, colorAmount: number, offset?: number, splitAmount?: number): Color[] {
     const colors = [new Color(seedColor)]
 
-    if (!splitAmount) splitAmount = Math.ceil(Math.random() * 2 + 1)
+    if (!splitAmount) splitAmount = Math.ceil(Math.random() * 2 + 1) // generates number from 1 to 3
     if (offset === undefined) offset = Math.random() * 90 / (splitAmount)
     if (offset === 0) splitAmount = 0
 

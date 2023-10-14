@@ -1,6 +1,6 @@
-import hsl from "../../types/hslType";
-import rgb from "../../types/rgbType";
-import round from "../round";
+import hsl from "../types/hslType";
+import rgb from "../types/rgbType";
+import round from "../utils/round";
 
 /**
  * Converts rgb color to hsl color

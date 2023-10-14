@@ -1,4 +1,4 @@
-import round from "../round"
+import round from "../utils/round"
 import getCssNum from "./getCssNums"
 
 /**

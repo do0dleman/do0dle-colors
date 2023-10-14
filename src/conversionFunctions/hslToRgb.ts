@@ -1,5 +1,5 @@
-import hsl from "../../types/hslType";
-import rgb from "../../types/rgbType";
+import hsl from "../types/hslType";
+import rgb from "../types/rgbType";
 
 /**
  * Converts hsl color to rgb color
