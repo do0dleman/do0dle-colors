@@ -1,4 +1,4 @@
-import { Color } from "../color/color";
+import { Color } from "../color/color.js";
 /**
  * returns sorted by lightness sorted array of colors
  * @param {Color} colors array of Colors
@@ -7,6 +7,6 @@ import { Color } from "../color/color";
 
 export default function sortByLightness(colors: Color[]): Color[] {
     return colors.sort((a, b) => {
-        return a.l - b.l
+        return a.L - b.L
     })
 }

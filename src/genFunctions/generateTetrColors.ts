@@ -1,5 +1,5 @@
-import { Color } from "../color/color";
-import round from "../utils/round";
+import { Color } from "../color/color.js";
+import round from "../utils/round.js";
 
 /**
  * Generates tetraidic colors

@@ -1,4 +1,4 @@
-import { Color } from "../color/color";
+import { Color } from "../color/color.js";
 
 /**
  * Generates color shades based on seedColor.
@@ -19,19 +19,19 @@ export default function generateColorShades(seedColor: Color, colorAmount: numbe
         if (iterations === 0) color.shiftL(-step * i)
         if (iterations > 0) color.shiftL(step * (i - iterations + 1))
 
-        if (color.l < 0) {
+        if (color.L < 0) {
             color = new Color(seedColor)
             iterations = i
             color.shiftL(step)
         }
 
-        if (color.l > 1) {
-            color.shiftL(-Math.floor(color.l))
+        if (color.L > 1) {
+            color.shiftL(-Math.floor(color.L))
         }
 
         colors.push(color)
     }
 
-    colors.sort((a, b) => a.l - b.l)
+    colors.sort((a, b) => a.L - b.L)
     return colors
 }

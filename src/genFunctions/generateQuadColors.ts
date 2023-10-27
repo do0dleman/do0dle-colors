@@ -1,5 +1,5 @@
-import { Color } from "../color/color";
-import generateTetraidicColors from "./generateTetrColors";
+import { Color } from "../color/color.js";
+import generateTetraidicColors from "./generateTetrColors.js";
 
 /**
  * Generates quadratic colors

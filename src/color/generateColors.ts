@@ -1,11 +1,10 @@
-import { Color } from "../color/color";
-import genMethodMap from "./genMethodMap";
-import mapLightness from "../postGenFunctions/mapLightness";
-import mapSaturation from "../postGenFunctions/mapSaturation";
-import sortByHue from "../sortFunctions/sortByHue";
-import sortBySaturation from "../sortFunctions/sortBySat";
-import genMethod from "../types/genMethod";
-import sortByLightness from "../sortFunctions/sortByLight";
+import { Color } from "../color/color.js";
+import genMethodMap from "./genMethodMap.js";
+import mapLightness from "../postGenFunctions/mapLightness.js";
+import sortByHue from "../sortFunctions/sortByHue.js";
+import genMethod from "../types/genMethod.js";
+import sortByLightness from "../sortFunctions/sortByLight.js";
+import mapChroma from "../postGenFunctions/mapChroma.js";
 
 /**
  * Generates color scheme based on seed color
@@ -22,8 +21,11 @@ export default function generateColors(color: Color, colorAmount: number, method
     let colors = genFunction(color, colorAmount)
 
     if (method != 'monochromatic') {
-        colors = mapSaturation(colors)
-        colors = mapLightness(colors)
+        if (Math.random() > 0.5) {
+            colors = mapChroma(colors)
+        } else {
+            colors = mapLightness(colors)
+        }
     }
 
     if (method != 'monochromatic') colors = sortByHue(colors)

@@ -1,10 +1,10 @@
-import hsl from "../types/hslType";
-import rgb from "../types/rgbType";
+import hsl from "../types/hslType.js";
+import rgb from "../types/rgbType.js";
 
 /**
- * Converts hsl color to rgb color
+ * Converts hsl color, where hue is in degrees and s,l in range [0; 1] to rgb color
  * @param {hsl} hsl hsl color value represented by an array 
- * @returns {rgb}   rgb color value represented by an array
+ * @returns {rgb} rgb color value represented by an array
  */
 export default function hslToRgb(hsl: hsl): rgb {
 

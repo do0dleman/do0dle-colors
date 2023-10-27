@@ -1,10 +1,10 @@
-import round from "../utils/round"
-import getCssNum from "./getCssNums"
+import round from "../../utils/round.js"
+import getCssNum from "./getCssNums.js"
 
 /**
- * parses rgb css property to a rgb array
+ * parses rgb css property to a normalized rgb array
  * @param {string} cssRgb rgb css property
- * @returns {[number, number, number]} rgb array
+ * @returns {[number, number, number]} normalized rgb array
  */
 export default function cssRgbToRgb(cssRgb: string): [number, number, number] {
 

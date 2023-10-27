@@ -1,4 +1,4 @@
-import { Color } from "../color/color";
+import { Color } from "../color/color.js";
 /**
  * returns sorted by hue sorted array of colors
  * @param {Color} colors array of Colors

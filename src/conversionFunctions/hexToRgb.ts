@@ -1,9 +1,9 @@
-import hex from "../types/hexType";
-import rgb from "../types/rgbType";
+import hex from "../types/hexType.js";
+import rgb from "../types/rgbType.js";
 /**
  * Converts hex color to rgb color
  * @param {hex} hex hex value represented by a string 
- * @returns {rgb}   rgb value represented by an array
+ * @returns {rgb} rgb value represented by an array
  */
 
 export default function hexToRgb(hex: hex): rgb {

@@ -1,30 +1,32 @@
-import generateAnalogousColors from "../genFunctions/generateAnalogousColors"
-import generateColorShades from "../genFunctions/generateColorShades"
-import generateComplimentaryColors from "../genFunctions/generateCompColors"
-import generateQuadraticColors from "../genFunctions/generateQuadColors"
-import generateSplitComplementaryColors from "../genFunctions/generateSplitCompColors"
-import generateTetraidicColors from "../genFunctions/generateTetrColors"
-import generateTriadColors from "../genFunctions/generateTriadColors"
-import genMethod from "../types/genMethod"
-import hex from "../types/hexType"
-import hsl from "../types/hslType"
-import rgb from "../types/rgbType"
-import cssHslToHsl from "../conversionFunctions/cssHslToHsl"
-import cssRgbToRgb from "../conversionFunctions/cssRgbToRgb"
-import hexToRgb from "../conversionFunctions/hexToRgb"
-import hslToRgb from "../conversionFunctions/hslToRgb"
-import rgbToHex from "../conversionFunctions/rgbToHex"
-import rgbToHsl from "../conversionFunctions/rgbToHsl"
-import round from "../utils/round"
-import generateColors from "./generateColors"
+import generateAnalogousColors from "../genFunctions/generateAnalogousColors.js"
+import generateColorShades from "../genFunctions/generateColorShades.js"
+import generateComplimentaryColors from "../genFunctions/generateCompColors.js"
+import generateQuadraticColors from "../genFunctions/generateQuadColors.js"
+import generateSplitComplementaryColors from "../genFunctions/generateSplitCompColors.js"
+import generateTetraidicColors from "../genFunctions/generateTetrColors.js"
+import generateTriadColors from "../genFunctions/generateTriadColors.js"
+import genMethod from "../types/genMethod.js"
+import hex from "../types/hexType.js"
+import hsl from "../types/hslType.js"
+import rgb from "../types/rgbType.js"
+import cssHslToHsl from "../conversionFunctions/cssProperties/cssHslToHsl.js"
+import cssRgbToRgb from "../conversionFunctions/cssProperties/cssRgbToRgb.js"
+import hexToRgb from "../conversionFunctions/hexToRgb.js"
+import hslToRgb from "../conversionFunctions/hslToRgb.js"
+import rgbToHex from "../conversionFunctions/rgbToHex.js"
+import rgbToHsl from "../conversionFunctions/rgbToHsl.js"
+import round from "../utils/round.js"
+import generateColors from "./generateColors.js"
+import rgbToOkLCh from "../conversionFunctions/rgbToOkLCh.js"
+import OkLChToRgb from "../conversionFunctions/OkLChToRgb.js"
 
-type ColorTypes = 'rgb' | 'hsl'
+type ColorTypes = 'rgb' | 'hsl' | 'oklch'
 
 /** A representation of color */
-class Color {
+export default class Color {
     h: number = 0
-    s: number = 0
-    l: number = 0
+    C: number = 0
+    L: number = 0
     /**
      * Create a color instance
      * @param {[number, number, number]} color array representing a color
@@ -63,46 +65,56 @@ class Color {
             const name = color.slice(0, 3)
             if (name === 'rgb') {
                 const rgb = cssRgbToRgb(color)
-                const hsl = rgbToHsl(rgb, true)
-                this.h = hsl[0]
-                this.s = hsl[1]
-                this.l = hsl[2]
+                const okLCh = rgbToOkLCh(rgb)
+                this.L = okLCh[0]
+                this.C = okLCh[1]
+                this.h = okLCh[2]
             }
             if (name === 'hsl') {
                 const hsl = cssHslToHsl(color)
-                this.h = hsl[0]
-                this.s = hsl[1]
-                this.l = hsl[2]
+                const rgb = hslToRgb(hsl as hsl)
+                const okLCh = rgbToOkLCh(rgb)
+                this.L = okLCh[0]
+                this.C = okLCh[1]
+                this.h = okLCh[2]
             }
         }
         if (colorType === 'hex') {
-            const hsl = rgbToHsl(hexToRgb(color))
-            this.h = hsl[0]
-            this.s = hsl[1]
-            this.l = hsl[2]
+            const okLCh = rgbToOkLCh(hexToRgb(color))
+            this.L = okLCh[0]
+            this.C = okLCh[1]
+            this.h = okLCh[2]
+        }
+        if (colorType === 'oklch') {
+            this.L = color[0]
+            this.C = color[1]
+            this.h = color[2]
         }
         if (colorType === 'rgb') {
-            const hsl = rgbToHsl(color, isNormalized)
-            this.h = hsl[0]
-            this.s = hsl[1]
-            this.l = hsl[2]
+            const okLCh = rgbToOkLCh(color, isNormalized)
+            this.L = okLCh[0]
+            this.C = okLCh[1]
+            this.h = okLCh[2]
         }
         if (colorType === 'hsl') {
+            let hsl: hsl = [0, 0, 0]
             if (isNormalized) {
-                this.h = color[0] * 360
-                this.s = color[1]
-                this.l = color[2]
+                hsl = [color[0] * 360, color[1], color[2]]
             }
             if (!isNormalized) {
-                this.h = color[0]
-                this.s = color[1] / 100
-                this.l = color[2] / 100
+                hsl = [color[0], color[1] / 100, color[2] / 100]
             }
+            const rgb = hslToRgb(hsl)
+            const okLCh = rgbToOkLCh(rgb)
+
+            this.L = okLCh[0]
+            this.C = okLCh[1]
+            this.h = okLCh[2]
         }
         if (colorType === 'color') {
+            this.L = color.L
+            this.C = color.C
             this.h = color.h
-            this.s = color.s
-            this.l = color.l
         }
     }
     /**
@@ -110,7 +122,10 @@ class Color {
      * @returns {hsl} returns hsl array
      */
     getHslArray(): hsl {
-        const hslArray: hsl = [this.h, this.s * 100, this.l * 100]
+        const rgb = OkLChToRgb([this.L, this.C, this.h])
+        const hsl = rgbToHsl(rgb)
+        const hslArray: hsl = [hsl[0], hsl[1] * 100, hsl[2] * 100]
+
         return hslArray
     }
     /**
@@ -118,7 +133,7 @@ class Color {
      * @returns {rgb} returns rgb array
      */
     getRgbArray(): rgb {
-        const rgbArray: rgb = hslToRgb([this.h, this.s, this.l])
+        const rgbArray: rgb = OkLChToRgb([this.L, this.C, this.h])
         return rgbArray
     }
     /**
@@ -126,14 +141,16 @@ class Color {
      * @returns {string} hsl string in css format
      */
     getCssHsl(): string {
-        return `hsl(${Math.round(this.h)}deg ${Math.round(this.s * 100)}% ${Math.round(this.l * 100)}%)`
+        const rgb = OkLChToRgb([this.L, this.C, this.h])
+        const hsl = rgbToHsl(rgb)
+        return `hsl(${Math.round(hsl[0])}deg ${Math.round(hsl[1] * 100)}% ${Math.round(hsl[2] * 100)}%)`
     }
     /**
      * Get the css rgb string of a color
      * @returns {string} rgb string in css format
      */
     getCssRgb(): string {
-        const rgb = hslToRgb([this.h, this.s, this.l])
+        const rgb = OkLChToRgb([this.L, this.C, this.h])
         return `rgb(${rgb[0]} ${rgb[1]} ${rgb[2]})`
     }
     /**
@@ -141,7 +158,16 @@ class Color {
      * @returns {hex} hex string in
      */
     getCssHex(): hex {
-        return rgbToHex(hslToRgb([this.h, this.s, this.l]))
+        return rgbToHex(OkLChToRgb([this.L, this.C, this.h]))
+    }
+    /**
+     * Get the hex string of a color
+     * @returns {hex} hex string in
+     */
+    getCssOklch(): string {
+        let hue = this.h
+        if (hue < 0) hue += 360
+        return `oklch(${Math.round(this.L * 100)}% ${Math.round(this.C * 100)}% ${Math.round(hue)})`
     }
     /**
      * Shifts hue value by a step value
@@ -153,18 +179,18 @@ class Color {
         this.h = hue
     }
     /**
-     * Shifts saturation value by a step value
-     * @param step amount of adjustment to saturation value
+     * Shifts chroma value by a step value
+     * @param step amount of adjustment to chroma value
      */
-    shiftS(step: number) {
-        this.s = round(this.s + step)
+    shiftC(step: number) {
+        this.C = round(this.C + step)
     }
     /**
     * Shifts lightness value by a step value
     * @param step amount of adjustment to lightness value
     */
     shiftL(step: number) {
-        this.l = round(this.l + step)
+        this.L = round(this.L + step)
     }
     /**
     * Generates color scheme based on color instance

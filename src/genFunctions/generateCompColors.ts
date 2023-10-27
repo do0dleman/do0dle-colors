@@ -1,5 +1,5 @@
-import { Color } from "../color/color";
-import generateSplitComplementaryColors from "./generateSplitCompColors";
+import { Color } from "../color/color.js";
+import generateSplitComplementaryColors from "./generateSplitCompColors.js";
 
 /**
  * Generates complementary colors

@@ -1,11 +1,11 @@
-import hsl from "../types/hslType";
-import rgb from "../types/rgbType";
-import round from "../utils/round";
+import hsl from "../types/hslType.js";
+import rgb from "../types/rgbType.js";
+import round from "../utils/round.js";
 
 /**
  * Converts rgb color to hsl color
  * @param {rgb} rgb rgb color value represented by an array 
- * @returns {hsl}   hsl color value represented by an array
+ * @returns {hsl} hsl color value represented by an array
  */
 export default function rgbToHsl(rgb: rgb, isNormalized?: boolean): hsl {
     const normalizedRgb = isNormalized ? rgb : rgb.map(val => val / 255)
@@ -26,7 +26,7 @@ export default function rgbToHsl(rgb: rgb, isNormalized?: boolean): hsl {
 
     let s = (max - min) / (1 - Math.abs(2 * l - 1))
     s = Math.min(round(s), 1)
-    if (l === 1) s = 0
+    if (l === 1 || isNaN(s)) s = 0
 
     return [hue, s, l]
 }
