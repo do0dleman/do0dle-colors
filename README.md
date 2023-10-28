@@ -1,6 +1,8 @@
 # do0dle-colors
 
-do0dle-colors is a color scheme generation library with no dependencies.
+do0dle-colors is a color scheme generation library with no dependencies that uses OkLCh under the hood to generate color schemes.
+
+> Note that there is an error ~0.1 (depending on color) in conversion from OkLab color space into an RGB color space.
 
 The bundle size is [currently ~2kB](https://bundlephobia.com/package/do0dle-colors).
 
@@ -33,14 +35,15 @@ color.getColorScheme(10, 'monochromatic')
 ```
 Or using distinct methods for more customization
 ```js
-// identical to color.getColorScheme(10, 'analogous')
+// similar to color.getColorScheme(10, 'analogous')
+// but only hue is being changed 
 color.getAnalogous(10) 
 
 // but you can specify more parameters
 const step = 10
 color.getAnalogous(10, step) 
 ``` 
-You can get array of avalible generation methods
+You can get an array of avalible generation methods
 ```js
 import { genMethods } from 'do0dle-colors'
 ```
@@ -67,15 +70,18 @@ You can create **Color** instance via:
 ```js
 new Color('#ff0ae7')
 ```
-* css rgb or hsl property:
+* css rgb, hsl or oklch property:
 ```js
 new Color('rgb(255 10 231)')
 new Color('rgb(255, 10, 231)')
 
 new Color('hsl(306deg 100% 52%)')
 new Color('hsl(0.85turn 100% 52%)')
+
+new Color('oklch(74% .63 210)')
+new Color('oklch(74% .63 3.67rad)')
 ```
-* hsl or rgb array:
+* hsl, rgb or oklch array:
 ```js
 //non-normalized color data
 new Color([255, 10, 231], 'rgb')
@@ -84,12 +90,23 @@ new Color([306, 100, 52], 'hsl')
 //Normalized color data
 new Color([1, 0.039, 0.906], 'rgb', true)
 new Color([0.85, 1, 0.52], 'hsl', true)
+
+// isNormalized is not considered with oklch
+// Lightness and Chroma must be in [0;1] 
+// and hue must be in degrees
+new Color([.56, .12, 240])  
+new Color([.56, .12, 240], 'OkLCh')  
 ```
 
 ### Color get methods 
 
 You can get **Color**'s color value as:
 
+* css oklch property string:
+```js
+const color = new Color([.54, .34, 121])
+color.getCssOklch() // 'oklch(54% 34%% 121)'
+```
 * css hsl property string:
 ```js
 const color = new Color([306, 100, 52], 'hsl')
@@ -104,6 +121,11 @@ color.getCssRgb() // 'rgb(255 10 231)'
 ```js
 const color = new Color([306, 100, 52], 'hsl')
 color.getCssHex() // '#FF0AE7'
+```
+* OkLCh array:
+```js
+const color = new Color([.54, .34, 121])
+color.getOkLChArray() // [.54, .34, 121]
 ```
 * hsl array:
 ```js
