@@ -56,7 +56,7 @@ export default class Color {
         let [color, colorType, isNormalized] = args
 
         if (isNormalized === undefined) isNormalized = false
-        if (colorType === undefined) colorType = 'hsl'
+        if (colorType === undefined) colorType = 'OkLCh'
 
         if (!Array.isArray(color) && typeof color == 'object') colorType = 'color'
 
