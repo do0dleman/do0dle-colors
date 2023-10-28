@@ -19,8 +19,10 @@ import round from "../utils/round.js"
 import generateColors from "./generateColors.js"
 import rgbToOkLCh from "../conversionFunctions/rgbToOkLCh.js"
 import OkLChToRgb from "../conversionFunctions/OkLChToRgb.js"
+import okLCh from "../types/okLChType.js"
+import cssOkLChToOkLch from "../conversionFunctions/cssProperties/cssOkLChtoOkLCh.js"
 
-type ColorTypes = 'rgb' | 'hsl' | 'oklch'
+type ColorTypes = 'rgb' | 'hsl' | 'OkLCh'
 
 /** A representation of color */
 export default class Color {
@@ -62,7 +64,7 @@ export default class Color {
         if (color[0] === '#') colorType = 'hex'
 
         if (colorType === 'cssString') {
-            const name = color.slice(0, 3)
+            const name = color.split('(')[0]
             if (name === 'rgb') {
                 const rgb = cssRgbToRgb(color)
                 const okLCh = rgbToOkLCh(rgb)
@@ -78,6 +80,12 @@ export default class Color {
                 this.C = okLCh[1]
                 this.h = okLCh[2]
             }
+            if (name === 'oklch') {
+                const okLCh = cssOkLChToOkLch(color)
+                this.L = okLCh[0]
+                this.C = okLCh[1]
+                this.h = okLCh[2]
+            }
         }
         if (colorType === 'hex') {
             const okLCh = rgbToOkLCh(hexToRgb(color))
@@ -85,7 +93,7 @@ export default class Color {
             this.C = okLCh[1]
             this.h = okLCh[2]
         }
-        if (colorType === 'oklch') {
+        if (colorType === 'OkLCh') {
             this.L = color[0]
             this.C = color[1]
             this.h = color[2]
@@ -105,7 +113,7 @@ export default class Color {
                 hsl = [color[0], color[1] / 100, color[2] / 100]
             }
             const rgb = hslToRgb(hsl)
-            const okLCh = rgbToOkLCh(rgb)
+            const okLCh = rgbToOkLCh(rgb, false)
 
             this.L = okLCh[0]
             this.C = okLCh[1]
@@ -125,6 +133,15 @@ export default class Color {
         const rgb = OkLChToRgb([this.L, this.C, this.h])
         const hsl = rgbToHsl(rgb)
         const hslArray: hsl = [hsl[0], hsl[1] * 100, hsl[2] * 100]
+
+        return hslArray
+    }
+    /**
+     * Get the okLCh array of a color
+     * @returns {okLCh} returns okLCh array
+     */
+    getOkLChArray(): hsl {
+        const hslArray: hsl = [this.L, this.C, this.h]
 
         return hslArray
     }
@@ -183,14 +200,14 @@ export default class Color {
      * @param step amount of adjustment to chroma value
      */
     shiftC(step: number) {
-        this.C = round(this.C + step)
+        this.C = round((this.C + step))
     }
     /**
     * Shifts lightness value by a step value
     * @param step amount of adjustment to lightness value
     */
     shiftL(step: number) {
-        this.L = round(this.L + step)
+        this.L = round((this.L + step))
     }
     /**
     * Generates color scheme based on color instance

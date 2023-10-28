@@ -82,8 +82,8 @@ new Color([255, 10, 231], 'rgb')
 new Color([306, 100, 52], 'hsl')
 
 //Normalized color data
-new Color(1, 0.039, 0.906, 'rgb', true)
-new Color(0.85, 1, 0.52, 'hsl', true)
+new Color([1, 0.039, 0.906], 'rgb', true)
+new Color([0.85, 1, 0.52], 'hsl', true)
 ```
 
 ### Color get methods 

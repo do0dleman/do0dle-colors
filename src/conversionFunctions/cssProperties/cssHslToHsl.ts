@@ -1,5 +1,6 @@
 import hsl from "../../types/hslType.js";
 import getCssNums from "./getCssNums.js";
+import parseCssAngleToDeg from "./parseCssAngleToDeg.js";
 
 /**
  * Parses css hsl string into hsl value with hue in degrees and s, l in range [0; 1]
@@ -10,8 +11,7 @@ export default function cssHslToHsl(cssHsl: string): hsl {
 
     const numHsl = getCssNums(cssHsl)
 
-    let hue = +numHsl[0]
-    if (cssHsl.includes('turn')) hue = +numHsl[0] * 360
+    const hue = parseCssAngleToDeg(numHsl[0], cssHsl)
 
     return [hue, +numHsl[1] / 100, +numHsl[2] / 100]
 

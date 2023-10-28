@@ -8,10 +8,7 @@ import sRGBtoLinear from "./gammaCorrection/sRGBtoLinear.js";
  * @returns {okLab} okLab color value represented by an array
  */
 export default function rgbToOkLab(rgb: rgb): okLab {
-    console.log(`before gamma: ${rgb}`)
     rgb = sRGBtoLinear(rgb) as rgb
-    console.log(`after gamma: ${rgb}`)
-
 
     const l = 0.4122214708 * rgb[0] + 0.5363325363 * rgb[1] + 0.0514459929 * rgb[2];
     const m = 0.2119034982 * rgb[0] + 0.6806995451 * rgb[1] + 0.1073969566 * rgb[2];

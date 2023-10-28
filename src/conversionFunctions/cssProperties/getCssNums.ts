@@ -8,7 +8,7 @@ export default function getCssNums(cssString: string): string[] {
         cssString = cssString.replace(/,/g, '')
     }
 
-    const nums = cssString.match(/(\s)?(\d+\.)?\d+(\s)?/g)!
+    const nums = cssString.match(/(\s)?(\.)?(\d+\.)?\d+(\s)?/g)!
     if (nums.length == 4) nums.pop()
 
     return nums

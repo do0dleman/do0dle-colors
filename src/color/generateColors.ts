@@ -26,6 +26,8 @@ export default function generateColors(color: Color, colorAmount: number, method
         } else {
             colors = mapLightness(colors)
         }
+        // colors = mapChroma(colors)
+        // colors = mapLightness(colors)
     }
 
     if (method != 'monochromatic') colors = sortByHue(colors)
