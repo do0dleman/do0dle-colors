@@ -105,7 +105,7 @@ You can get **Color**'s color value as:
 * css oklch property string:
 ```js
 const color = new Color([.54, .34, 121])
-color.getCssOklch() // 'oklch(54% 34%% 121)'
+color.getCssOklch() // 'oklch(54% 34% 121)'
 ```
 * css hsl property string:
 ```js
