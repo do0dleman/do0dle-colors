@@ -138,6 +138,13 @@ const color = new Color([306, 100, 52], 'hsl')
 color.getRgbArray() // [255, 10, 231]
 ```
 
+### Color Conversion Functions
+
+If you need to convert one color type to another directly you can used provided conversion functions:
+```ts
+import { ConversionFunctions } from 'do0dle-colors'
+ConversionFunctions.hslToRgb([306, 1, .52]) // [255, 10, 231]
+```
 ## License
 
 See the [LICENSE](https://github.com/do0dleman/do0dle-colors/blob/master/LICENSE.md) file for license rights and limitations (MIT).
