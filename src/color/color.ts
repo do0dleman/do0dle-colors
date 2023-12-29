@@ -19,8 +19,7 @@ import round from "../utils/round.js"
 import generateColors from "./generateColors.js"
 import rgbToOkLCh from "../conversionFunctions/rgbToOkLCh.js"
 import OkLChToRgb from "../conversionFunctions/OkLChToRgb.js"
-import okLCh from "../types/okLChType.js"
-import cssOkLChToOkLch from "../conversionFunctions/cssProperties/cssOkLChtoOkLCh.js"
+import cssOkLChToOkLch from "../conversionFunctions/cssProperties/cssOkLChToOkLCh.js"
 
 type ColorTypes = 'rgb' | 'hsl' | 'OkLCh'
 

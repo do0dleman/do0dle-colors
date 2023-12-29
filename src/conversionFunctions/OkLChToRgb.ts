@@ -2,7 +2,7 @@ import okLCh from "../types/okLChType.js";
 import rgb from "../types/rgbType.js";
 import clamp from "../utils/clamp.js";
 import isValidRGB from "../utils/isValidRGB.js";
-import OkLChToRgbRough from "./OkLChtoRgbRough.js";
+import OkLChToRgbRough from "./OkLChToRgbRough.js";
 import linearToSRGB from "./gammaCorrection/linearToSRGB.js";
 
 export default function OkLChToRgb(okLCh: okLCh) {
