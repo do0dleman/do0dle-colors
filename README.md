@@ -4,7 +4,7 @@ do0dle-colors is a color scheme generation library with no dependencies that use
 
 > Note that there is an error ~0.1 (depending on color) in conversion from OkLab color space into an RGB color space.
 
-The bundle size is [currently ~2kB](https://bundlephobia.com/package/do0dle-colors).
+The bundle size is [currently ~3kB](https://bundlephobia.com/package/do0dle-colors).
 
 You can check color scheme generation web app based on this library [here](https://do0dleman.github.io/hue-hub/).
 
