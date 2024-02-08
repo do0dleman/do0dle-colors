@@ -6,6 +6,8 @@ do0dle-colors is a color scheme generation library with no dependencies that use
 
 The bundle size is [currently ~2kB](https://bundlephobia.com/package/do0dle-colors).
 
+You can check color scheme generation web app based on this library [here](https://do0dleman.github.io/hue-hub/).
+
 ## Instalation
 
 Install with any prefered package manager such as `npm`.
