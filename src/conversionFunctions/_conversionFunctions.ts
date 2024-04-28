@@ -2,7 +2,7 @@ import hexToRgb from "./hexToRgb.js";
 import hslToRgb from "./hslToRgb.js";
 import okLabToRgb from "./OkLabToRGb.js";
 import OkLChToRgb from "./OkLChToRgb.js";
-import OkLChToRgbRough from "./OkLChtoRgbRough.js";
+import OkLChToRgbRough from "./OkLChToRgbRough.js";
 import rgbToHex from "./rgbToHex.js";
 import rgbToHsl from "./rgbToHsl.js";
 import rgbToOkLab from "./rgbToOkLab.js";
