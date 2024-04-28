@@ -23,6 +23,7 @@ export default function generateColors(color: Color, colorAmount: number, method
     if (method != 'monochromatic') {
         if (Math.random() > 0.5) {
             colors = mapChroma(colors)
+            colors = mapLightness(colors)
         } else {
             colors = mapLightness(colors)
         }

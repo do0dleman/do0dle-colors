@@ -19,25 +19,25 @@ import round from "../utils/round.js"
 import generateColors from "./generateColors.js"
 import rgbToOkLCh from "../conversionFunctions/rgbToOkLCh.js"
 import OkLChToRgb from "../conversionFunctions/OkLChToRgb.js"
-import okLCh from "../types/okLChType.js"
 import cssOkLChToOkLch from "../conversionFunctions/cssProperties/cssOkLChtoOkLCh.js"
 
 type ColorTypes = 'rgb' | 'hsl' | 'OkLCh'
 
 /** A representation of color */
 export default class Color {
+    //! h in degrees in range [0:360], C and L in range [0;1]
     h: number = 0
     C: number = 0
     L: number = 0
     /**
      * Create a color instance
-     * @param {[number, number, number]} color array representing a color
-     * @param {ColorTypes} [colorType=hsl] color array type, default = hsl
+     * @param {[number, number, number]} color array representing a color in non-normalized OKLCh by default 
+     * @param {ColorTypes} [colorType=OkLCh] color array type, default = OkLCh
      * @param {boolean} [isNormalized=false] specifies is array normalized, default = false
      */
     constructor(color: [number, number, number], colorType?: ColorTypes, isNormalized?: boolean)
     /**
-     * Create a color iunstance from css rgb / hsl string
+     * Create a color instance from css rgb / hsl string
      * @param color css rgb / hsl color string
      */
     constructor(color: string)
@@ -94,9 +94,16 @@ export default class Color {
             this.h = okLCh[2]
         }
         if (colorType === 'OkLCh') {
-            this.L = color[0]
-            this.C = color[1]
-            this.h = color[2]
+            if (isNormalized) {
+                this.L = color[0]
+                this.C = color[1]
+                this.h = (color[2] * 360) % 360
+            }
+            if (!isNormalized) {
+                this.L = color[0] / 100
+                this.C = color[1] / 100
+                this.h = color[2] 
+            }
         }
         if (colorType === 'rgb') {
             const okLCh = rgbToOkLCh(color, isNormalized)
@@ -215,6 +222,9 @@ export default class Color {
     * @param {genMethod} [method] method of color scheme generation
     * @returns {Color[]} color scheme
     */
+
+    //! Color scheme generation
+
     getColorScheme(colorAmount: number, method?: genMethod): Color[] {
         return generateColors(this, colorAmount, method)
     }
